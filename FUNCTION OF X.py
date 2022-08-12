@@ -16,7 +16,7 @@ class function_of_x:
 
 
 
-    def facto(num):
+    def facto(self,num):
 
        factorial = 1
 
@@ -50,13 +50,13 @@ class function_of_x:
 
            temp2=temp1.copy()
 
-           temp2['Coefficient']=1/function_of_x.facto(i)
+           temp2['Coefficient']=1/self.facto(i)
 
            temp2['power']=i
 
            Coefficients.append(temp2)
 
-           x1=function_of_x.facto(i) 
+           x1=self.facto(i) 
 
            value=value + (self.value_x**i)/x1
 
@@ -78,13 +78,13 @@ class function_of_x:
 
             temp2=temp1.copy()
 
-            temp2['Coefficient']=(((-1)**i)/function_of_x.facto((2*i)+1))
+            temp2['Coefficient']=(((-1)**i)/self.facto((2*i)+1))
 
             temp2['power']=((2*i)+1)
 
             Coefficients.append(temp2)
 
-            value=value+(((-1)**i)/function_of_x.facto((2*i)+1))*(self.value_x**((2*i)+1))
+            value=value+(((-1)**i)/self.facto((2*i)+1))*(self.value_x**((2*i)+1))
 
         print("Expansion value of sinx is :",value)
 
@@ -112,7 +112,7 @@ class function_of_x:
 
                    numerator=numerator*(self.value_alpa-j)
 
-               temp2['coefficient']= numerator/function_of_x.facto(i)
+               temp2['coefficient']= numerator/self.facto(i)
 
                temp2['Power']=self.value_p**i
 
@@ -196,12 +196,12 @@ class function_of_x:
 
     
 
-x2=function_of_x(8,3,0.5,2,'negative')
+x=function_of_x(8,3,0.5,2,'negative')
 
-x2.ex()
+x.ex()
 
-x2.sin()           
+x.sin()           
 
-x2.binomial()
+x.binomial()
 
-x2.logx()
+x.logx()
